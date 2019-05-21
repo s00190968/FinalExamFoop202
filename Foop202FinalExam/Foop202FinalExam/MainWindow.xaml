@@ -14,7 +14,7 @@
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
                 <Button Name="btnEx1" Content="Get Customers" Height="25" Width="200" Click="btnEx1_Click_1"/>
-                <ListBox Name="lbxCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="20"/>
+                <ListBox Name="lbxCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="20" MouseDoubleClick="DataGrid_MouseDoubleClick"/>
             </Grid>
         </TabItem>
         <TabItem Name="ProductsTab" Header="Products" Width="80">
@@ -23,8 +23,7 @@
                     <RowDefinition Height="10*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                
-                <DataGrid Name="dgrCustomersQ2" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+                <ListBoxItem Name="q2Lbx" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
             </Grid>
         </TabItem>
     </TabControl>

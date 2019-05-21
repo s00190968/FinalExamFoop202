@@ -24,6 +24,6 @@
         <TextBox x:Name="PhoneTxtBx" Grid.Row="0" Grid.Column="1" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20" BorderBrush="Black"/>
         <TextBox x:Name="EmailTxtBx" Grid.Row="1" Grid.Column="1" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20" BorderBrush="Black"/>
         <Label x:Name="lastModifiedLbl"  Grid.Row="2" Grid.Column="1" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontSize="20"/>
-        <Button x:Name="UpdateBtn" Grid.Column="1" Grid.Row="3" Content="Update" Width="150" Height="50" FontSize="25"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="UpdateBtn" Grid.Column="1" Grid.Row="3" Content="Update" Width="150" Height="50" FontSize="25"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="UpdateBtn_Click"/>
     </Grid>
 </Window>
