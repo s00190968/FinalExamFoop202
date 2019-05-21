@@ -21,6 +21,7 @@ namespace Foop202FinalExam
     public partial class MainWindow : Window
     {
         AdventureLiteEntities db = new AdventureLiteEntities();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -51,6 +52,40 @@ namespace Foop202FinalExam
                     customerWindow.ShowDialog();
                 }
             }
+        }
+
+        private void ProductsTab_ContextMenuOpening(object sender, ContextMenuEventArgs e)//products tab is opened
+        {
+            decimal minValue = db.Products.Min(p => p.ListPrice);
+            decimal maxValue = db.Products.Max(p => p.ListPrice);
+
+            maxValueSlider.Minimum = (double)minValue;
+            maxValueSlider.Maximum = (double)maxValue;
+
+            double currentMaxValue = maxValueSlider.Value;
+            currentMaxValueTxBlk.Text = currentMaxValue.ToString();
+        }
+
+        partial class Products{
+            public void displayProductDetails()
+            {
+                string details = string.Format($"Product ID:{0}");
+            }
+        }
+
+        private void maxValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double currentMaxValue = maxValueSlider.Value;
+            currentMaxValueTxBlk.Text = currentMaxValue.ToString();
+
+            var q = db.Products.Where(p => (decimal)p.ListPrice < (decimal)currentMaxValue);
+
+            q2Lbx.ItemsSource = q.ToList();
+        }
+
+        private void lbxCustomersQ1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -14,16 +14,27 @@
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
                 <Button Name="btnEx1" Content="Get Customers" Height="25" Width="200" Click="btnEx1_Click_1"/>
-                <ListBox Name="lbxCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="20" MouseDoubleClick="DataGrid_MouseDoubleClick"/>
+                <ListBox Name="lbxCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="20" SelectionChanged="lbxCustomersQ1_SelectionChanged" MouseDoubleClick="DataGrid_MouseDoubleClick"/>
             </Grid>
         </TabItem>
-        <TabItem Name="ProductsTab" Header="Products" Width="80">
+        <TabItem Name="ProductsTab" Header="Products" Width="80" ContextMenuOpening="ProductsTab_ContextMenuOpening">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="90*"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <ListBoxItem Name="q2Lbx" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Name="maxValueTxBlk" Grid.Row="0" Grid.Column="0" Width="150" Height="30" FontSize="20" Text="Max value:"/>
+                    <TextBlock Name="currentMaxValueTxBlk" Grid.Row="0" Grid.Column="0" Width="100" Height="30" FontSize="20" Text="10"/>
+                </StackPanel>
+                <Slider Grid.Row="0" Grid.Column="1" Name="maxValueSlider" Minimum="{Binding minValue}" Maximum="{Binding maxValue}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" MinWidth="150" ValueChanged="maxValueSlider_ValueChanged"/>
+                <TextBlock Name="productDetailsTxBlk" Grid.Row="1" Grid.Column="1" Margin="10"/>
+                <ListBox Name="q2Lbx" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="10"/>
+                
             </Grid>
         </TabItem>
     </TabControl>
