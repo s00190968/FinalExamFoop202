@@ -1,0 +1,31 @@
+﻿<Window x:Class="Foop202FinalExam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Foop202FinalExam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl TabStripPlacement="Top">
+        <TabItem Name="CustomersTab" Header="Customers" Width="80">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btnEx1" Content="Get Customers" Height="25" Width="200" Click="btnEx1_Click_1"/>
+                <ListBox Name="lbxCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200" Margin="20"/>
+            </Grid>
+        </TabItem>
+        <TabItem Name="ProductsTab" Header="Products" Width="80">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                
+                <DataGrid Name="dgrCustomersQ2" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
